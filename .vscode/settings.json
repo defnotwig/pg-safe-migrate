@@ -1,0 +1,5 @@
+{
+    "tasksync.responseTimeout": "0",
+    "tasksync.sessionWarningHours": 0,
+    "tasksync.maxConsecutiveAutoResponses": 50
+}

@@ -1,0 +1,60 @@
+{
+  "name": "pg-safe-migrate-core",
+  "version": "0.1.0",
+  "description": "Core migration engine for pg-safe-migrate",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run --config vitest.config.ts src/__tests__/unit",
+    "test:unit": "vitest run --config vitest.config.ts src/__tests__/unit",
+    "test:integration": "vitest run --config vitest.config.ts src/__tests__/integration",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "pg": "^8.12.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.11.0",
+    "rimraf": "^5.0.0"
+  },
+  "peerDependencies": {},
+  "keywords": [
+    "postgresql",
+    "postgres",
+    "migration",
+    "migrations",
+    "schema",
+    "safety",
+    "lint",
+    "drift-detection",
+    "advisory-lock",
+    "checksum",
+    "zero-downtime",
+    "database",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/defnotwig/pg-safe-migrate",
+    "directory": "packages/core"
+  },
+  "homepage": "https://github.com/defnotwig/pg-safe-migrate#readme",
+  "bugs": {
+    "url": "https://github.com/defnotwig/pg-safe-migrate/issues"
+  }
+}

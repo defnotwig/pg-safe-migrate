@@ -1,0 +1,99 @@
+name: 'pg-safe-migrate'
+description: 'Run pg-safe-migrate commands in your CI pipeline — safety-first PostgreSQL migrations'
+author: 'pg-safe-migrate contributors'
+
+branding:
+  icon: 'database'
+  color: 'blue'
+
+inputs:
+  command:
+    description: 'Command to run: check, up, down, status, lint, doctor'
+    required: true
+    default: 'check'
+  database_url:
+    description: 'PostgreSQL connection string'
+    required: true
+  dir:
+    description: 'Path to migrations directory'
+    required: false
+    default: './migrations'
+  schema:
+    description: 'Database schema for history table'
+    required: false
+    default: 'public'
+  table:
+    description: 'History table name'
+    required: false
+    default: '_pg_safe_migrate'
+  transaction:
+    description: 'Transaction policy: auto | always | never'
+    required: false
+    default: 'auto'
+  allow_unsafe:
+    description: 'Comma-separated list of safety rules to allow (e.g., PGSM001,PGSM007)'
+    required: false
+    default: ''
+  version:
+    description: 'Version of pg-safe-migrate to install'
+    required: false
+    default: 'latest'
+  node_version:
+    description: 'Node.js version to use (only applicable if setup-node is needed)'
+    required: false
+    default: '20'
+
+outputs:
+  result:
+    description: 'Exit code from pg-safe-migrate'
+    value: ${{ steps.run.outputs.result }}
+  stdout:
+    description: 'Standard output from pg-safe-migrate'
+    value: ${{ steps.run.outputs.stdout }}
+
+runs:
+  using: 'composite'
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ inputs.node_version }}
+
+    - name: Install pg-safe-migrate
+      shell: bash
+      run: npm install -g pg-safe-migrate@${{ inputs.version }}
+
+    - name: Run pg-safe-migrate
+      id: run
+      shell: bash
+      env:
+        DATABASE_URL: ${{ inputs.database_url }}
+        NO_COLOR: '1'
+      run: |
+        ARGS="${{ inputs.command }}"
+        ARGS="$ARGS --dir ${{ inputs.dir }}"
+        ARGS="$ARGS --schema ${{ inputs.schema }}"
+        ARGS="$ARGS --table ${{ inputs.table }}"
+        ARGS="$ARGS --transaction ${{ inputs.transaction }}"
+
+        if [ -n "${{ inputs.allow_unsafe }}" ]; then
+          IFS=',' read -ra RULES <<< "${{ inputs.allow_unsafe }}"
+          for rule in "${RULES[@]}"; do
+            ARGS="$ARGS --allow-unsafe $rule"
+          done
+        fi
+
+        set +e
+        OUTPUT=$(pg-safe-migrate $ARGS 2>&1)
+        EXIT_CODE=$?
+
+        echo "$OUTPUT"
+        echo "stdout<<EOF" >> $GITHUB_OUTPUT
+        echo "$OUTPUT" >> $GITHUB_OUTPUT
+        echo "EOF" >> $GITHUB_OUTPUT
+        echo "result=$EXIT_CODE" >> $GITHUB_OUTPUT
+
+        if [ $EXIT_CODE -ne 0 ]; then
+          echo "::error::pg-safe-migrate exited with code $EXIT_CODE"
+          exit $EXIT_CODE
+        fi

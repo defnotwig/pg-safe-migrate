@@ -1,0 +1,9 @@
+{
+  "databaseUrl": "${DATABASE_URL}",
+  "migrationsDir": "./migrations",
+  "schema": "public",
+  "tableName": "_pg_safe_migrate",
+  "transactionPolicy": "auto",
+  "requireDown": false,
+  "allowRules": []
+}

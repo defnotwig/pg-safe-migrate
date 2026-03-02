@@ -1,0 +1,62 @@
+{
+  "name": "pg-safe-migrate",
+  "version": "0.1.0",
+  "description": "Safety-first PostgreSQL migration CLI",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "pg-safe-migrate": "./dist/bin.js"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:unit": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "pg-safe-migrate-core": "workspace:*"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.0"
+  },
+  "keywords": [
+    "postgresql",
+    "postgres",
+    "migration",
+    "migrations",
+    "cli",
+    "safety",
+    "lint",
+    "drift-detection",
+    "advisory-lock",
+    "checksum",
+    "zero-downtime",
+    "database",
+    "nodejs",
+    "github-actions",
+    "ci"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/defnotwig/pg-safe-migrate",
+    "directory": "packages/cli"
+  },
+  "homepage": "https://github.com/defnotwig/pg-safe-migrate#readme",
+  "bugs": {
+    "url": "https://github.com/defnotwig/pg-safe-migrate/issues"
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "migrationsDir": "./migrations",
+  "databaseUrl": "${DATABASE_URL}"
+}

@@ -1,0 +1,36 @@
+{
+  "name": "nextjs-postgres-starter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Next.js + PostgreSQL starter with pg-safe-migrate",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:up": "pg-safe-migrate up",
+    "db:down": "pg-safe-migrate down",
+    "db:status": "pg-safe-migrate status",
+    "db:lint": "pg-safe-migrate lint",
+    "db:check": "pg-safe-migrate check",
+    "db:create": "pg-safe-migrate create"
+  },
+  "dependencies": {
+    "next": "^14.2.0",
+    "pg": "^8.12.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/pg": "^8.11.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "pg-safe-migrate": "^0.1.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
