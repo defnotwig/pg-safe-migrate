@@ -42,10 +42,19 @@ pg-safe-migrate status
 
 ## Packages
 
-| Package | Description |
-|---------|-------------|
-| [`pg-safe-migrate`](./packages/cli) | CLI tool |
-| [`pg-safe-migrate-core`](./packages/core) | Core library (programmatic API) |
+| Package | Version | Description |
+|---------|---------|-------------|
+| [`pg-safe-migrate`](./packages/cli) | [![npm](https://img.shields.io/npm/v/pg-safe-migrate.svg)](https://www.npmjs.com/package/pg-safe-migrate) | CLI tool |
+| [`pg-safe-migrate-core`](./packages/core) | [![npm](https://img.shields.io/npm/v/pg-safe-migrate-core.svg)](https://www.npmjs.com/package/pg-safe-migrate-core) | Core library (programmatic API) |
+
+## Starter Templates
+
+Get up and running quickly with a production-ready starter:
+
+| Template | Stack | Description |
+|----------|-------|-------------|
+| [express-postgres-starter](https://github.com/defnotwig/express-postgres-starter) | Express + TypeScript | REST API with safe migrations baked in |
+| [nextjs-postgres-starter](https://github.com/defnotwig/nextjs-postgres-starter) | Next.js + TypeScript | Full-stack app with migration workflow |
 
 ## Documentation
 
@@ -55,6 +64,8 @@ pg-safe-migrate status
 - [Overrides](./docs/overrides.md)
 - [Zero-Downtime Patterns](./docs/zero-downtime.md)
 - [GitHub Action](./docs/github-action.md)
+- [Ecosystem & Integrations](./docs/ecosystem-narrative.md)
+- [Adoption Roadmap](./docs/adoption-roadmap.md)
 
 ## CI Gate Example
 
@@ -92,6 +103,13 @@ Returns exit code 1 if any safety rules are violated or drift is detected.
 ## Contributing
 
 See [CONTRIBUTING.md](./CONTRIBUTING.md) for development setup and guidelines.
+
+## Community
+
+- [Blog: Why We Built pg-safe-migrate](./content/devto-launch-post.md)
+- [Roadmap](./ROADMAP.md)
+- [Security Policy](./SECURITY.md)
+- [Code of Conduct](./CODE_OF_CONDUCT.md)
 
 ## License
 
