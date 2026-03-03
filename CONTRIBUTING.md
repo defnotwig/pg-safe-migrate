@@ -127,6 +127,12 @@ test(core): add drift detection edge cases
 
 This project follows the [Contributor Covenant Code of Conduct](./CODE_OF_CONDUCT.md).
 
+## Contributors
+
+Thanks to all the people who contribute to pg-safe-migrate! Whether it's code, documentation, bug reports, or feedback — every contribution matters.
+
+We welcome contributors of all experience levels. If you're new to open source, check out [First Timers Only](https://www.firsttimersonly.com/) for helpful resources.
+
 ## License
 
 By contributing, you agree that your contributions will be licensed under the MIT License.
