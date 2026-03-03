@@ -107,3 +107,4 @@ Exits non-zero if drift, unsafe migrations, or lint errors are detected. Perfect
 - [Configuration](./configuration.md) — customize table names, schemas, and policies
 - [Safety Rules](./safety-rules.md) — learn about built-in rules and how to override them
 - [GitHub Action](./github-action.md) — integrate into your CI workflow
+- [Zero-Downtime Deployments](./zero-downtime.md) — learn safe migration patterns for production
