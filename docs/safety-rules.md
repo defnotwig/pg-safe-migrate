@@ -170,3 +170,8 @@ pg-safe-migrate lint --format json
   }
 ]
 ```
+
+## See Also
+
+- [Overrides](./overrides.md) — how to allow specific rules when needed
+- [Configuration](./configuration.md) — global rule configuration options
