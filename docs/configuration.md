@@ -83,3 +83,8 @@ const steps = await migrator.run();
 // Get status
 const status = await migrator.status();
 ```
+
+## Tips
+
+- Use environment variable interpolation (`${DATABASE_URL}`) in config files to avoid hardcoding credentials.
+- Set `requireDown: true` in team environments to enforce reversible migrations.
