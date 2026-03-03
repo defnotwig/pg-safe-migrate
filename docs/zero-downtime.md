@@ -156,3 +156,8 @@ ALTER TABLE users ALTER COLUMN age TYPE BIGINT;
 - **Use `pg-safe-migrate check`** in CI to catch risky patterns before merge
 - **Test migrations on a copy** of production data before applying
 - **Monitor lock waits** with `SET lock_timeout = '5s'` to fail fast instead of deadlocking
+
+## Further Reading
+
+- [Safety Rules](./safety-rules.md) — rules that enforce these patterns automatically
+- [Getting Started](./getting-started.md) — quick start guide for new users
