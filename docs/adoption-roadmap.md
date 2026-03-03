@@ -127,3 +127,7 @@ When promoting, always lead with the **unique combination** that no other Node.j
 **Realistic timeline**: 6–12 weeks of consistent promotion to build enough metrics for a credible 2.2 application.
 
 **Application sweet spot**: When you have 500+ weekly npm downloads, 100+ GitHub stars, and can point to at least a few downstream users in production.
+
+## Getting Involved
+
+Want to help pg-safe-migrate grow? Check out [CONTRIBUTING.md](../CONTRIBUTING.md) for ways to contribute.
