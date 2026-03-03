@@ -59,3 +59,5 @@ When using pg-safe-migrate:
 - Run `pg-safe-migrate check` in CI to catch unsafe migrations before deploy
 - Enable `requireDown: true` for reversible deployment pipelines
 - Review all `-- pgsm:allow` overrides in code review
+- Use the minimum required database privileges for running migrations
+- Regularly update pg-safe-migrate to receive the latest security patches
