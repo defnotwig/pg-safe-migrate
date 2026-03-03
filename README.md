@@ -112,6 +112,10 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for development setup and guidelines.
 - [Security Policy](./SECURITY.md)
 - [Code of Conduct](./CODE_OF_CONDUCT.md)
 
+## Acknowledgments
+
+Special thanks to all contributors who help improve pg-safe-migrate through code, documentation, and feedback.
+
 ## License
 
 MIT
